@@ -22,4 +22,7 @@ La aplicación es estática y se sirve desde `dist/`. Puede abrirse con cualquie
 
 ## Documentación
 
-La especificación funcional está en [docs/ESPECIFICACION_FUNCIONAL.md](docs/ESPECIFICACION_FUNCIONAL.md).
+- [Especificación funcional](docs/ESPECIFICACION_FUNCIONAL.md)
+- [Propuesta detallada en Word](docs/Propuesta_Sistema_Digital_Diana.docx)
+- [Presentación para propietarios en PowerPoint](docs/Presentacion_Diana_Sistema_Digital.pptx)
+- [Presentación para propietarios en PDF](docs/Presentacion_Diana_Sistema_Digital.pdf)
