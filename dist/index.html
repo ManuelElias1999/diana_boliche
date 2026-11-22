@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Entradas y reservas para Diana by Loft, Cochabamba.">
+  <title>Diana by Loft — Cochabamba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#inicio" aria-label="Diana, inicio"><span class="brand-word">diana</span><span class="brand-sub">BY LOFT · CBB</span></a>
+    <nav id="mainNav" aria-label="Navegación principal">
+      <a href="#experiencia">Experiencia</a><a href="#eventos">Eventos</a><a href="#entradas">Entradas</a><a href="#mesas">VIP & mesas</a>
+    </nav>
+    <div class="header-actions"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button><button class="button button-light header-buy" data-scroll="#entradas">Comprar entradas</button></div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true"></div><div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="hero-overline">ESTO ES DIANA, DONDE LA NOCHE COBRA VIDA</p><h1>Diana by Loft</h1><p class="hero-location">COCHABAMBA, BOLIVIA</p>
+        <p class="hero-description">Una experiencia de noche completa. Música, atmósfera y un lugar reservado para ti.</p>
+        <div class="hero-actions"><button class="button button-red" data-scroll="#entradas">Entradas</button><button class="button button-light" data-scroll="#mesas">Reservas VIP</button></div>
+      </div>
+      <a href="#experiencia" class="hero-scroll" aria-label="Ver más"><span></span>DESCUBRE DIANA</a><div class="hero-status"><i></i> PRÓXIMA NOCHE · SÁB 28 NOV · 22:00</div>
+    </section>
+
+    <section class="statement section" id="experiencia">
+      <div class="section-tag reveal">LA EXPERIENCIA</div>
+      <div class="statement-grid">
+        <h2 class="reveal">Una noche.<br><em>Todo lo que buscas.</em></h2>
+        <div class="statement-copy reveal delay-1"><p>Diana reúne diseño, música y energía en una experiencia nocturna pensada para disfrutarse de principio a fin.</p><p>Compra tu entrada o elige tu mesa antes de llegar. Sin llamadas, sin dudas, sin perder tu lugar.</p><button class="text-link" data-scroll="#eventos">Explorar la próxima fecha</button></div>
+      </div>
+      <div class="experience-panels reveal">
+        <article class="experience-main"><img src="assets/diana-club-hero.webp" alt="Interior de club con iluminación roja"><div class="panel-overlay"><span>01</span><h3>La pista</h3><p>El centro de cada noche.</p></div></article>
+        <article class="experience-side"><img src="assets/diana-dj-event.webp" alt="DJ bajo luces rojas"><div class="panel-overlay"><span>02</span><h3>El sonido</h3><p>Energía desde el primer beat.</p></div></article>
+      </div>
+    </section>
+
+    <section class="events section" id="eventos">
+      <div class="section-head reveal"><div><span class="section-tag">PRÓXIMOS EVENTOS</span><h2>Elige tu<br><em>próxima noche.</em></h2></div><p>Nuevas fechas, diferentes atmósferas y la misma energía de Diana.</p></div>
+      <div class="event-grid">
+        <article class="event-card featured-event reveal"><img src="assets/diana-dj-event.webp" alt="DJ en evento Red Room"><div class="event-shade"></div><div class="date-badge"><strong>28</strong><span>NOV<br>SÁB</span></div><div class="event-info"><span>PRÓXIMA FECHA · 22:00</span><h3>Red Room</h3><p>DJ SET · +18 · NIGHT ELEGANCE</p><button class="button button-red" data-scroll="#entradas">Ver entradas</button></div></article>
+        <div class="event-stack">
+          <article class="event-card compact-event reveal delay-1"><div class="compact-art red-waves"></div><div class="date-badge"><strong>05</strong><span>DIC<br>SÁB</span></div><div class="event-info"><span>PRÓXIMAMENTE</span><h3>Saturday Sessions</h3><p>LINE-UP POR REVELAR</p></div></article>
+          <article class="event-card compact-event reveal delay-2"><div class="compact-art logo-night"><img src="assets/diana-logo.png" alt=""></div><div class="date-badge"><strong>12</strong><span>DIC<br>SÁB</span></div><div class="event-info"><span>PRÓXIMAMENTE</span><h3>Diana Nights</h3><p>SPECIAL EDITION</p></div></article>
+        </div>
+      </div><p class="demo-note">Fechas y programación mostradas como contenido demostrativo.</p>
+    </section>
+
+    <section class="tickets section" id="entradas">
+      <div class="section-head inverse reveal"><div><span class="section-tag">ACCESO</span><h2>Tu entrada<br><em>a Diana.</em></h2></div><p>Selecciona el acceso que prefieras. Recibirás tu confirmación después de validar el pago.</p></div>
+      <div class="ticket-grid">
+        <article class="ticket-card reveal" data-type="Entrada General" data-price="80"><div class="ticket-top"><span>GENERAL ACCESS</span><i>01</i></div><div class="ticket-body"><h3>General</h3><p>Acceso a la pista y a todos los ambientes principales.</p><ul><li>Ingreso hasta las 00:30</li><li>Acceso a pista y barras</li><li>Confirmación digital</li></ul></div><div class="ticket-bottom"><div><small>POR PERSONA</small><strong>Bs 80</strong></div><button class="button button-red choose-ticket">Elegir entrada</button></div></article>
+        <article class="ticket-card vip-ticket reveal delay-1" data-type="Entrada VIP" data-price="150"><div class="ticket-top"><span>VIP ACCESS</span><i>MÁS ELEGIDA</i></div><div class="ticket-body"><h3>VIP</h3><p>Ingreso preferencial y acceso a un espacio exclusivo de Diana.</p><ul><li>Fila de ingreso preferencial</li><li>Acceso a zona VIP</li><li>Welcome shot de cortesía</li></ul></div><div class="ticket-bottom"><div><small>POR PERSONA</small><strong>Bs 150</strong></div><button class="button button-light choose-ticket">Elegir VIP</button></div></article>
+      </div>
+    </section>
+
+    <section class="tables section" id="mesas">
+      <div class="section-head reveal"><div><span class="section-tag">RESERVAS VIP</span><h2>Tu mesa.<br><em>Tu noche.</em></h2></div><p>El valor de la reserva se convierte en consumo. Elige una mesa disponible directamente en el plano.</p></div>
+      <div class="table-pricing reveal delay-1"><div><span>MESA GENERAL</span><strong>Bs 1.000</strong><small>10 MANILLAS · CONSUMO INCLUIDO</small></div><div><span>MESA VIP</span><strong>Bs 1.400</strong><small>12 MANILLAS · CONSUMO INCLUIDO</small></div></div>
+      <div class="map-layout reveal">
+        <div class="club-map"><div class="map-topline"><span><i class="available"></i>Disponible</span><span><i class="selected"></i>Seleccionada</span><span><i class="occupied"></i>No disponible</span></div>
+          <div class="floor"><div class="stage"><span>DJ</span><small>ESCENARIO</small></div>
+            <div class="vip-zone"><span class="zone-title">VIP LOUNGE</span><button class="table vip" data-table="V1" data-zone="VIP" data-price="1400" data-bands="12">V1</button><button class="table vip occupied" disabled>V2</button><button class="table vip" data-table="V3" data-zone="VIP" data-price="1400" data-bands="12">V3</button><button class="table vip" data-table="V4" data-zone="VIP" data-price="1400" data-bands="12">V4</button></div>
+            <div class="dance-floor"><span>PISTA</span></div>
+            <div class="general-zone"><span class="zone-title">GENERAL</span><button class="table general" data-table="G1" data-zone="General" data-price="1000" data-bands="10">G1</button><button class="table general occupied" disabled>G2</button><button class="table general" data-table="G3" data-zone="General" data-price="1000" data-bands="10">G3</button><button class="table general" data-table="G4" data-zone="General" data-price="1000" data-bands="10">G4</button><button class="table general occupied" disabled>G5</button><button class="table general" data-table="G6" data-zone="General" data-price="1000" data-bands="10">G6</button><button class="table general" data-table="G7" data-zone="General" data-price="1000" data-bands="10">G7</button><button class="table general" data-table="G8" data-zone="General" data-price="1000" data-bands="10">G8</button></div>
+            <div class="bar">BARRA</div><div class="entrance">ENTRADA</div></div>
+        </div>
+        <aside class="reservation-panel" id="reservationPanel"><span class="panel-label">TU SELECCIÓN</span><div class="empty-selection"><div class="empty-ring"></div><h3>Elige una mesa</h3><p>Selecciona una de las mesas disponibles en el plano para ver los detalles.</p></div><div class="active-selection" hidden><div class="selection-head"><div><small>MESA</small><strong id="selectedTable">—</strong></div><span id="selectedZone">—</span></div><div class="selection-info"><p><span>Consumo incluido</span><b id="selectedPrice">—</b></p><p><span>Manillas incluidas</span><b id="selectedBands">—</b></p><p><span>Fecha</span><b>28 NOV</b></p></div><button class="button button-red full" id="reserveButton">Reservar esta mesa</button><small class="panel-note">Confirmaremos tu reserva después de validar el comprobante.</small></div></aside>
+      </div>
+    </section>
+
+    <section class="process section"><div class="section-tag reveal">ASÍ DE SIMPLE</div><div class="process-grid"><h2 class="reveal">De la pantalla<br><em>a la pista.</em></h2><div class="process-steps reveal delay-1"><article><span>01</span><div><h3>Elige</h3><p>Tu entrada o la mesa que prefieras.</p></div></article><article><span>02</span><div><h3>Paga</h3><p>Escanea el QR desde tu banco.</p></div></article><article><span>03</span><div><h3>Confirma</h3><p>Sube el comprobante y espera la validación.</p></div></article></div></div></section>
+    <section class="final-cta"><div class="final-bg" aria-hidden="true"></div><div class="final-shade" aria-hidden="true"></div><div class="final-content reveal"><span class="section-tag">NOS VEMOS ADENTRO</span><h2>La noche<br>es <em>tuya.</em></h2><button class="button button-red" data-scroll="#entradas">Asegurar mi lugar</button></div></section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-word">diana</span><span class="brand-sub">BY LOFT · CBB</span></div><p>© 2026 Diana Fiesta · Prototipo demostrativo</p><a href="https://www.instagram.com/dianabyloft/" target="_blank" rel="noreferrer">Instagram</a></footer>
+
+  <div class="modal" id="checkoutModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-backdrop" data-close></div><div class="modal-dialog"><button class="modal-close" aria-label="Cerrar" data-close>×</button><div class="checkout-progress"><span class="active"></span><span></span><span></span></div>
+      <div class="checkout-step active" data-step="1"><span class="section-tag">TU RESERVA</span><h2 id="modalTitle">Completa tus datos</h2><div class="order-summary"><span id="orderType">Entrada VIP</span><strong id="orderPrice">Bs 150</strong></div><form id="customerForm"><label>Nombre completo<input type="text" name="name" placeholder="Ej. Andrea Pérez" required></label><label>WhatsApp<input type="tel" name="phone" placeholder="Ej. 70700000" required></label><label>Correo electrónico<input type="email" name="email" placeholder="tu@correo.com" required></label><label class="quantity-row" id="quantityRow">Cantidad<select name="quantity"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label><button class="button button-red full" type="submit">Continuar al pago</button></form></div>
+      <div class="checkout-step" data-step="2"><span class="section-tag">PAGO POR QR</span><h2>Escanea y paga</h2><p class="modal-copy">Usa la app de tu banco. El monto debe coincidir exactamente con tu reserva.</p><div class="payment-box"><div class="fake-qr" id="fakeQr" aria-label="Código QR de demostración"></div><div><small>TOTAL A PAGAR</small><strong id="paymentTotal">Bs 150</strong><span>DIANA BY LOFT</span></div></div><p class="prototype-note">QR ilustrativo — esta demostración no procesa pagos reales.</p><button class="button button-red full" id="paidButton">Ya realicé el pago</button><button class="text-button" data-prev="1">Volver</button></div>
+      <div class="checkout-step" data-step="3"><span class="section-tag">ÚLTIMO PASO</span><h2>Sube tu comprobante</h2><p class="modal-copy">Aceptamos imágenes JPG, PNG o PDF. Revisaremos tu pago antes de confirmar.</p><label class="upload-box" for="receiptUpload"><input type="file" id="receiptUpload" accept="image/png,image/jpeg,application/pdf"><span class="upload-icon">＋</span><strong id="uploadTitle">Seleccionar comprobante</strong><small id="uploadHint">JPG, PNG o PDF · Máx. 10 MB</small></label><button class="button button-red full" id="confirmButton" disabled>Enviar comprobante</button><button class="text-button" data-prev="2">Volver</button></div>
+      <div class="checkout-step success-step" data-step="4"><div class="success-mark">✓</div><span class="section-tag">COMPROBANTE RECIBIDO</span><h2>Tu noche ya<br>está en camino.</h2><p>Validaremos el pago y te enviaremos la confirmación por WhatsApp. Este registro es una simulación.</p><div class="confirmation-code">SOLICITUD <strong>#DF-2806</strong></div><button class="button button-red full" data-close>Listo</button></div>
+  </div></div>
+  <script src="app.js"></script>
+</body>
+</html>
