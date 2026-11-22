@@ -1,22 +1,25 @@
-# Diana Boliche
+# Diana Fiesta
 
-Sitio web premium para **Diana by Loft**, Cochabamba, Bolivia.
+Prototipo funcional para digitalizar la venta de entradas, reservas de mesas, operaciones de puerta, barra, inventario, relacionadores y control administrativo de Diana by Loft.
 
-## Funcionalidades
+## Rutas
 
-- Compra simulada de entradas General y VIP.
-- Plano interactivo para reservar mesas General y VIP.
-- Estados de mesas disponibles y ocupadas.
-- Pago mediante QR ilustrativo.
-- Carga de comprobante.
-- Diseño responsive para computadora y celular.
+- `/` — página pública, eventos, entradas y mesas.
+- `/administrador/` — caja, comprobantes, métricas, precios, inventario y usuarios.
+- `/puerta/` — búsqueda de compras, entrega de manillas y venta directa.
+- `/barra/` — punto de venta, consumo de mesas e inventario.
+- `/relacionador/` — código, ventas atribuidas y puntos.
 
-## Ejecutar localmente
+## Estado actual
 
-```bash
-python3 -m http.server 4173 -d dist
-```
+Esta versión es un prototipo interactivo para revisión con los propietarios. Los datos de los paneles son ejemplos y todavía no existe autenticación, base de datos ni procesamiento real de pagos.
 
-Luego abre [http://localhost:4173](http://localhost:4173).
+La implementación productiva propuesta usa Next.js y Supabase, con autenticación por rol, almacenamiento privado de comprobantes, políticas RLS y registros de auditoría.
 
-> Esta versión es demostrativa. El QR no procesa pagos reales y las fechas, eventos y precios de entradas son contenido de ejemplo.
+## Desarrollo local
+
+La aplicación es estática y se sirve desde `dist/`. Puede abrirse con cualquier servidor estático.
+
+## Documentación
+
+La especificación funcional está en [docs/ESPECIFICACION_FUNCIONAL.md](docs/ESPECIFICACION_FUNCIONAL.md).
