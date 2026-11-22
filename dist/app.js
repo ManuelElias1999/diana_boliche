@@ -1,5 +1,10 @@
 const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>[...p.querySelectorAll(s)];
-const state={kind:'ticket',type:'Entrada VIP',price:150,quantity:1,table:null,date:''};
+const state={kind:'ticket',type:'Entrada VIP',price:150,quantity:1,table:null,date:'',tableDate:'2026-11-28'};
+const tableAvailability={
+  '2026-11-28':['V2','G2','G5'],
+  '2026-12-04':['V1','V4','G1','G4','G8'],
+  '2026-12-12':['V3','G3','G6','G7']
+};
 
 const header=$('#siteHeader');
 const nav=$('#mainNav');
@@ -15,14 +20,39 @@ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isInte
 $$('.reveal').forEach(el=>observer.observe(el));
 
 const panel=$('#reservationPanel');
-$$('.table:not(.occupied)').forEach(table=>table.addEventListener('click',()=>{
+function clearTableSelection(){
+  $$('.table').forEach(t=>t.classList.remove('is-selected'));
+  state.table=null;
+  $('.empty-selection',panel).hidden=false;
+  $('.active-selection',panel).hidden=true;
+}
+function renderTableAvailability(){
+  const occupied=tableAvailability[state.tableDate]||[];
+  $$('.table').forEach(table=>{
+    const unavailable=occupied.includes(table.dataset.table);
+    table.classList.toggle('occupied',unavailable);
+    table.disabled=unavailable;
+    table.setAttribute('aria-label',`${table.dataset.table} · ${unavailable?'No disponible':'Disponible'}`);
+  });
+  $('#mapDateLabel').textContent=formatEventDate(state.tableDate).replace(' · 22:00','').toUpperCase();
+}
+$$('.table-date').forEach(btn=>btn.addEventListener('click',()=>{
+  state.tableDate=btn.dataset.tableDate;
+  state.date=state.tableDate;
+  $$('.table-date').forEach(dateBtn=>dateBtn.classList.toggle('active',dateBtn===btn));
+  clearTableSelection();
+  renderTableAvailability();
+}));
+$$('.table').forEach(table=>table.addEventListener('click',()=>{
+  if(table.disabled)return;
   $$('.table').forEach(t=>t.classList.remove('is-selected'));
   table.classList.add('is-selected');
-  state.kind='table'; state.table=table.dataset.table; state.type=`Mesa ${table.dataset.table} · ${table.dataset.zone}`; state.price=Number(table.dataset.price); state.quantity=1;
+  state.kind='table'; state.date=state.tableDate; state.table=table.dataset.table; state.type=`Mesa ${table.dataset.table} · ${table.dataset.zone}`; state.price=Number(table.dataset.price); state.quantity=1;
   $('#selectedTable').textContent=table.dataset.table;
   $('#selectedZone').textContent=table.dataset.zone.toUpperCase();
   $('#selectedPrice').textContent=`Bs ${Number(table.dataset.price).toLocaleString('es-BO')}`;
   $('#selectedBands').textContent=table.dataset.bands;
+  $('#selectedDate').textContent=formatEventDate(state.tableDate).replace(' · 22:00','');
   $('.empty-selection',panel).hidden=true; $('.active-selection',panel).hidden=false;
   if(innerWidth<900) panel.scrollIntoView({behavior:'smooth',block:'center'});
 }));
@@ -38,6 +68,8 @@ function openCheckout(){
   $('#quantityRow').style.display=state.kind==='ticket'?'block':'none';
   if(state.kind==='table') $('#quantityRow select').value='1';
   $('#eventDate').value=state.date;
+  $('#eventDate').disabled=state.kind==='table';
+  $('.event-date-field').classList.toggle('date-locked',state.kind==='table');
   updateDateLabels(state.date);
   showStep(1); modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; setTimeout(()=>$('input',modal)?.focus(),100);
 }
@@ -62,7 +94,7 @@ function updateDateLabels(value){
 }
 $('#eventDate').addEventListener('change',e=>{state.date=e.target.value;updateDateLabels(state.date)});
 $('#customerForm').addEventListener('submit',e=>{
-  e.preventDefault(); const data=new FormData(e.target); state.date=String(data.get('eventDate')||''); state.quantity=state.kind==='ticket'?Number(data.get('quantity')):1; const total=state.price*state.quantity;
+  e.preventDefault(); const data=new FormData(e.target); if(state.kind==='ticket')state.date=String(data.get('eventDate')||''); state.quantity=state.kind==='ticket'?Number(data.get('quantity')):1; const total=state.price*state.quantity;
   updateDateLabels(state.date); $('#paymentTotal').textContent=formatBs(total); createFakeQr(`${state.type}-${state.date}-${total}`); showStep(2);
 });
 $('#paidButton').addEventListener('click',()=>showStep(3));
@@ -83,6 +115,7 @@ function createFakeQr(seed){
   }
 }
 createFakeQr('diana');
+renderTableAvailability();
 
 const legalCopy={
   privacy:{title:'Política de privacidad',body:'<p>Para gestionar compras y reservas podemos solicitar nombre, correo, WhatsApp y el comprobante de pago. Estos datos se utilizan únicamente para validar el pago, confirmar el acceso y atender consultas relacionadas con la reserva.</p><p>No vendemos información personal. Los datos se conservan solo durante el tiempo necesario para administrar la operación y cumplir obligaciones aplicables. Puedes solicitar acceso, corrección o eliminación mediante los canales oficiales de Diana.</p>'},
