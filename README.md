@@ -12,13 +12,31 @@ Prototipo funcional para digitalizar la venta de entradas, reservas de mesas, op
 
 ## Estado actual
 
-Esta versión es un prototipo interactivo para revisión con los propietarios. Los datos de los paneles son ejemplos y todavía no existe autenticación, base de datos ni procesamiento real de pagos.
+Esta versión es una demo frontend completamente interactiva para revisión con los propietarios. No existe todavía autenticación, base de datos ni procesamiento real de pagos, pero los flujos pueden recorrerse de principio a fin con datos simulados.
+
+La demo guarda los cambios en `localStorage`: una compra creada desde la página pública aparece en Administración, puede aprobarse y luego entregarse desde Puerta. Las ventas de Barra descuentan inventario y saldo de mesas. Desde `/administrador/#qr` puede restaurarse el estado inicial.
+
+### Funciones disponibles en la demo
+
+- Compra de entradas y reserva de mesas con carga de comprobante.
+- Aprobación o rechazo manual de pagos.
+- Eventos, precios, cupos y estados de mesas editables.
+- Venta presencial y entrega de manillas en Puerta.
+- Punto de venta de Barra, carrito, métodos de pago y consumo de mesa.
+- Inventario, alertas de stock y ajustes de existencias.
+- Usuarios, relacionadores, códigos, puntos y ventas atribuidas.
+- Reportes por evento y exportación CSV.
+- Configuración visual del QR de pago.
 
 La implementación productiva propuesta usa Next.js y Supabase, con autenticación por rol, almacenamiento privado de comprobantes, políticas RLS y registros de auditoría.
 
 ## Desarrollo local
 
-La aplicación es estática y se sirve desde `dist/`. Puede abrirse con cualquier servidor estático.
+La aplicación es estática y se sirve desde `dist/`. Puede abrirse con cualquier servidor estático. Por ejemplo:
+
+```bash
+python3 -m http.server 3000 --directory dist
+```
 
 ## Documentación
 
