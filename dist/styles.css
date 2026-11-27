@@ -23,3 +23,20 @@
 @media(max-width:560px){.table-date-section{padding:22px 18px}.table-date-picker{display:grid;grid-template-columns:1fr}.table-date{width:100%;flex-direction:row;align-items:center;justify-content:space-between}.map-topline strong{width:100%;margin-bottom:4px}.location-actions{display:grid;width:100%}.location-actions .button{text-align:center}.social-row{gap:14px}.map-embed,.map-embed iframe{min-height:340px}}
 .archive{background:#0c0c0e}.archive-grid{display:grid;grid-template-columns:1.25fr .75fr .75fr;gap:16px}.archive-card{min-height:500px;position:relative;overflow:hidden;border:1px solid var(--line);background:#111}.archive-card img{position:absolute;width:100%;height:100%;object-fit:cover;transition:.7s}.archive-card:hover img{transform:scale(1.04)}.archive-shade{position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.92))}.archive-copy{position:absolute;left:28px;right:28px;bottom:28px;z-index:2}.archive-copy span{font-size:.52rem;font-weight:700;letter-spacing:.16em;color:#ff5c70}.archive-copy h3{font:500 3.4rem/.84 var(--serif);margin:10px 0 12px}.archive-copy p{font-size:.68rem;color:#bbb;margin:0}.archive-social{background:radial-gradient(circle at 50% 35%,rgba(239,24,51,.35),transparent 35%),#070707}.archive-social img{width:150px;height:150px;object-fit:contain;left:50%;top:30%;transform:translate(-50%,-50%)}.archive-social:hover img{transform:translate(-50%,-50%) scale(1.06)}.archive-social a{color:#fff;text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:6px;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}@media(max-width:1000px){.archive-grid{grid-template-columns:1fr 1fr}.archive-featured{grid-column:1/-1}.archive-card{min-height:430px}}@media(max-width:760px){.archive-grid{grid-template-columns:1fr}.archive-featured{grid-column:auto}.archive-card{min-height:430px}.archive-copy h3{font-size:3rem}}
 .fake-qr img{width:100%;height:100%;display:block;object-fit:contain;background:#fff}.checkout-step label small{color:#777;font-size:.56rem;font-weight:500;text-transform:none;letter-spacing:0;margin-left:4px}
+
+/* Tipografia legible y numeros uniformes */
+body,button,input,select{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
+.site-header nav a,.button,.text-link,.event-link,.brand-sub{font-size:.75rem}
+.hero-overline,.hero-status,.section-kicker,.date-kicker,.panel-label,.zone-title,.map-topline,.table-date span,.stage small,.bar,.entrance{font-size:.72rem}
+.table-date b,.table-pricing span,.table-pricing small,.ticket-bottom small,.selection-head small,.selection-head>span,.panel-note,.process-steps article>span{font-size:.78rem}
+.table,.table.occupied:after{font-size:.78rem}
+.order-summary span,form label,.payment-box small,.payment-box span,.prototype-note,.upload-box small,.confirmation-code{font-size:.8rem}
+.site-footer,.site-footer a,.legal-link,.footer-bottom,.footer-column strong,.archive-copy span,.archive-copy p,.archive-social a,.social-row a,.map-embed a{font-size:.8rem}
+.ticket-bottom strong,.table-pricing strong,.selection-head strong,.order-summary strong,.payment-box strong,.confirmation-code strong,.table-date-section strong{
+  font-family:var(--sans);font-weight:600;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums
+}
+@media(max-width:1000px){.site-header nav a{font-size:.75rem}}
+@media(max-width:760px){.site-header nav a,.event-link{font-size:.8rem}}
+.button,.site-header nav a,.table-date b,.table{font-size:.875rem}
+.table.occupied:after{font-size:.7rem}
+.table-date span,.table-pricing span,.table-pricing small,.ticket-bottom small,.map-topline,.panel-label{font-size:.8rem}
